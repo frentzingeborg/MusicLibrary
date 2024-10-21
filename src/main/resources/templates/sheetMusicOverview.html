@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview of sheet music in library</title>
+</head>
+<body>
+<h1>Overview of sheet music in library</h1>
+
+<table>
+    <tr>
+        <th>Title of piece</th>
+        <th>Composer</th>
+        <th></th>
+    </tr>
+    <tr th:each="sheetmusic : ${allSheetMusic}">
+        <td th:text="${sheetmusic.title}"></td>
+        <td th:text="${sheetmusic.composer}"></td>
+        <td><a th:href="@{/sheetmusic/delete/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">delete</a></td>
+    </tr>
+</table>
+
+<a th:href="@{/sheetmusic/new}">Add a new piece of music</a>
+</body>
+</html>
