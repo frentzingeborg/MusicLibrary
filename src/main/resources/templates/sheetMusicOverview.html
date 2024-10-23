@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Overview of sheet music in library</title>
@@ -11,12 +11,15 @@
     <tr>
         <th>Title of piece</th>
         <th>Composer</th>
-        <th></th>
+        <th></th><!-- Delete music-->
     </tr>
     <tr th:each="sheetmusic : ${allSheetMusic}">
         <td th:text="${sheetmusic.title}"></td>
         <td th:text="${sheetmusic.composer}"></td>
-        <td><a th:href="@{/sheetmusic/delete/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">delete</a></td>
+
+        <td>
+            <a th:href="@{/sheetmusic/delete/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">delete</a>
+        </td>
     </tr>
 </table>
 
