@@ -11,11 +11,14 @@
     <tr>
         <th>Title of piece</th>
         <th>Composer</th>
+        <th>Times performed</th>
+        <th></th><!-- Add new performance-->
         <th></th><!-- Delete music-->
     </tr>
     <tr th:each="sheetmusic : ${allSheetMusic}">
         <td th:text="${sheetmusic.title}"></td>
         <td th:text="${sheetmusic.composer}"></td>
+        <td th:text="${sheetmusic.getNumberOfPerformances()}"></td>
         <td>
             <a th:href="@{/copy/new/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">add new performance</a>
         </td>

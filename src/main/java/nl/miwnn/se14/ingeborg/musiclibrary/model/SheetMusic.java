@@ -18,6 +18,20 @@ public class SheetMusic {
     private String title;
     private String composer;
 
+    @OneToMany(mappedBy = "sheetMusic")
+    private List<Copy> copies;
+
+    public int getNumberOfPerformances() {
+        int count = 0;
+
+        for (Copy copy : copies) {
+            if (copy.getAvailable()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public Long getSheetMusicId() {
         return sheetMusicId;
     }
