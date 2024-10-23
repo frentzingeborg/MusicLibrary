@@ -16,7 +16,9 @@
     <tr th:each="sheetmusic : ${allSheetMusic}">
         <td th:text="${sheetmusic.title}"></td>
         <td th:text="${sheetmusic.composer}"></td>
-
+        <td>
+            <a th:href="@{/copy/new/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">add new performance</a>
+        </td>
         <td>
             <a th:href="@{/sheetmusic/delete/{sheetMusicId}(sheetMusicId = ${sheetmusic.sheetMusicId})}">delete</a>
         </td>
