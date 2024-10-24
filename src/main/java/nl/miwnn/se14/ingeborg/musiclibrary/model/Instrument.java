@@ -10,11 +10,11 @@ import jakarta.persistence.Id;
  */
 
 @Entity
-public class Instrumentation {
+public class Instrument {
 
     @Id @GeneratedValue
     private Long instrumentId;
-    private String intrumentName;
+    private String name;
 
     public Long getInstrumentId() {
         return instrumentId;
@@ -24,11 +24,11 @@ public class Instrumentation {
         this.instrumentId = instrumentId;
     }
 
-    public String getIntrumentName() {
-        return intrumentName;
+    public String getName() {
+        return name;
     }
 
-    public void setIntrumentName(String intrumentName) {
-        this.intrumentName = intrumentName;
+    public void setName(String intrumentName) {
+        this.name = name;
     }
 }
