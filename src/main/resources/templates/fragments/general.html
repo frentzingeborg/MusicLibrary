@@ -10,12 +10,15 @@
 <body>
 
 <div th:fragment="navbar">
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center"><!--
+        <li><a href="@{/sheetmusic/overview}">Sheet Music</a></li>
+        <li><a href="@{/instrument/overview}">Instruments</a></li>-->
+
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/sheetmusic/overview}">Available sheet music</a>
+            <a class="nav-link" th:href="@{/sheetmusic/overview}">Sheet Music</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/sheetmusic/new}">Add new sheet music</a>
+            <a class="nav-link" th:href="@{/instrument/overview}">Instruments</a>
         </li>
     </ul>
 </div>

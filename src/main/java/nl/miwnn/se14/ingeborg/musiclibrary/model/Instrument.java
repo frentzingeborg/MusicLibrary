@@ -3,6 +3,9 @@ package nl.miwnn.se14.ingeborg.musiclibrary.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.Set;
 
 /**
  * @author Ingeborg Frentz
@@ -15,6 +18,9 @@ public class Instrument {
     @Id @GeneratedValue
     private Long instrumentId;
     private String name;
+
+    @OneToMany(mappedBy = "instrument")
+    private Set<InstrumentCopy> instrumentcopies;
 
     public Long getInstrumentId() {
         return instrumentId;

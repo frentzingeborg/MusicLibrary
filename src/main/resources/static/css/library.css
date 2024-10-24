@@ -1,14 +1,52 @@
 h1 {
-    color: midnightblue;
+    color: darkblue;
+    font-family: "Garamond", Garamond, serif;
 }
 
+.p1 {
+    font-family: "Garamond", Garamond, serif;
+}
+
+ul {
+    positon: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: teal;
+    font-family: "Garamond", Garamond, serif;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Garamond", Garamond, serif;
+}
+
+li a:hover {
+    background-color: darkcyan;
+}
+
+.active {
+    background-color: teal;
+}
 
 footer {
-    color: #FFE4C4FF;
-    background-color: #008080FF;
+    color: blanchedalmond;
+    background-color: teal;
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    font-family: "Garamond", Garamond, serif;
 }

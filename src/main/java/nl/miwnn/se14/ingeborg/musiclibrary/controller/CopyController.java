@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import nl.miwnn.se14.ingeborg.musiclibrary.model.Copy;
 import nl.miwnn.se14.ingeborg.musiclibrary.model.SheetMusic;
 import nl.miwnn.se14.ingeborg.musiclibrary.resources.CopyRepository;
+import nl.miwnn.se14.ingeborg.musiclibrary.resources.InstrumentRepository;
 import nl.miwnn.se14.ingeborg.musiclibrary.resources.SheetMusicRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +19,11 @@ import java.util.Optional;
 
 @Controller
 public class CopyController {
-
     private final SheetMusicRepository sheetMusicRepository;
     private final CopyRepository copyRepository;
 
-    public CopyController(SheetMusicRepository sheetMusicRepository, CopyRepository copyRepository) {
+    public CopyController(SheetMusicRepository sheetMusicRepository,
+                          CopyRepository copyRepository) {
         this.sheetMusicRepository = sheetMusicRepository;
         this.copyRepository = copyRepository;
     }
