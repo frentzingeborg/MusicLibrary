@@ -15,14 +15,13 @@
         <table>
             <tr>
                 <td>Instrument</td>
-                <td><input type="text" th:field="*{name}"/></td>
+                <td><input type="text" th:field="*{instrumentName}"/></td>
             </tr>
         </table>
-
-        <input type="submit" value="Save instrument"/>
+        <button type="submit" class="btn btn-warning">Save instrument</button>
     </form>
 
-    <a th:href="@{/instrument/overview}">Go back to the instrument overview</a>
+    <a class="btn btn-warning" role="button" th:href="@{/instrument/overview}">Go back to the instrument overview</a>
 
 </div>
 

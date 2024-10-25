@@ -55,4 +55,12 @@ public class SheetMusic {
     public void setComposer(String composer) {
         this.composer = composer;
     }
+
+    public List<Copy> getCopies() {
+        return copies;
+    }
+
+    public void setCopies(List<Copy> copies) {
+        this.copies = copies;
+    }
 }

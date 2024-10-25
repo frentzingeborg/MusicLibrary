@@ -49,8 +49,8 @@ public class SheetMusicController {
         return "redirect:/sheetmusic/overview";
     }
 
-    @GetMapping("/sheetmusic/delete/{sheetMusicId}")
-    private String deleteSheetMusic(@PathVariable("sheetMusicId") Long sheetMusicId) {
+    @GetMapping("/sheetmusic/delete/{title}")
+    private String deleteSheetMusic(@PathVariable("title") Long sheetMusicId) {
         sheetMusicRepository.deleteById(sheetMusicId);
         return "redirect:/sheetmusic/overview";
     }

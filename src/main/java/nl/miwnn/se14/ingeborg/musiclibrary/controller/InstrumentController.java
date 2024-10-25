@@ -1,7 +1,6 @@
 package nl.miwnn.se14.ingeborg.musiclibrary.controller;
 
 import nl.miwnn.se14.ingeborg.musiclibrary.model.Instrument;
-import nl.miwnn.se14.ingeborg.musiclibrary.model.SheetMusic;
 import nl.miwnn.se14.ingeborg.musiclibrary.resources.InstrumentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,8 +36,7 @@ public class InstrumentController {
     }
 
     @PostMapping("/new")
-    private String saveOrUpdateInstrument(@ModelAttribute("newInstrument") Instrument instrumentToBeSaved,
-                                          BindingResult result) {
+    private String saveOrUpdateInstrument(@ModelAttribute("newInstrument") Instrument instrumentToBeSaved, BindingResult result) {
         if (result.hasErrors()) {
             System.err.println(result.getAllErrors());
             return "redirect:/instrument/overview";
@@ -48,9 +46,9 @@ public class InstrumentController {
         return "redirect:/instrument/overview";
     }
 
-    @GetMapping("/instrument/delete/{instrumentId}")
-    private String deleteInstrument(@PathVariable("instrumentId") Long instrumentId) {
-        instrumentRepository.deleteById(instrumentId);
+    @GetMapping("/instrument/delete/{instrumentName}")
+    private String deleteInstrument(@PathVariable("instrumentName") String instrumentName) {
+        instrumentRepository.deleteByInstrumentName(instrumentName);
         return "redirect:/instrument/overview";
     }
 }

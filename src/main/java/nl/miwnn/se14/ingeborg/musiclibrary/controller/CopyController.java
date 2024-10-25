@@ -28,8 +28,8 @@ public class CopyController {
         this.copyRepository = copyRepository;
     }
 
-    @GetMapping("/copy/new/{sheetMusicId}")
-    private String createNewCopy(@PathVariable("sheetMusicId") Long sheetMusicId) {
+    @GetMapping("/copy/new/{title}")
+    private String createNewCopy(@PathVariable("title") Long sheetMusicId) {
         Optional<SheetMusic> sheetMusicOptional = sheetMusicRepository.findById(sheetMusicId);
 
         if (sheetMusicOptional.isEmpty()) {

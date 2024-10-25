@@ -22,11 +22,12 @@
             </tr>
         </table>
 
-        <input type="submit" value="Save sheet music"/>
+        <button type="submit" class="btn btn-warning">Save sheet music</button>
     </form>
 
-    <a th:href="@{/sheetmusic/overview}">Go back to the sheet music overview</a>
+    <a class="btn btn-warning" role="button" th:href="@{/sheetmusic/overview}">Go back to the sheet music overview</a>
 </div>
+
 
 <div th:replace="~{fragments/general :: footer}"></div>
 <div th:replace="~{fragments/general :: bottomScripts}"></div>

@@ -1,10 +1,14 @@
+body {
+    background-color: blanchedalmond;
+}
+
 h1 {
-    color: darkblue;
-    font-family: "Garamond", Garamond, serif;
+    color: maroon;
+    font-family: "Cambria", Cambria, serif;
 }
 
 .p1 {
-    font-family: "Garamond", Garamond, serif;
+    font-family: "Cambria", Cambria, serif;
 }
 
 ul {
@@ -15,8 +19,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: teal;
-    font-family: "Garamond", Garamond, serif;
+    background-color: darkgoldenrod;
+    font-family: "Cambria", Cambria, serif;
 }
 
 li {
@@ -29,24 +33,24 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: "Garamond", Garamond, serif;
+    font-family: "Cambria", Cambria, serif;
 }
 
 li a:hover {
-    background-color: darkcyan;
+    background-color: darkgoldenrod;
 }
 
 .active {
-    background-color: teal;
+    background-color: goldenrod;
 }
 
 footer {
     color: blanchedalmond;
-    background-color: teal;
+    background-color: goldenrod;
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-family: "Garamond", Garamond, serif;
+    font-family: "Cambria", Cambria, serif;
 }

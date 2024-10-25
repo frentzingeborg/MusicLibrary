@@ -17,7 +17,7 @@ public class Instrument {
 
     @Id @GeneratedValue
     private Long instrumentId;
-    private String name;
+    private String instrumentName;
 
     @OneToMany(mappedBy = "instrument")
     private Set<InstrumentCopy> instrumentcopies;
@@ -30,11 +30,19 @@ public class Instrument {
         this.instrumentId = instrumentId;
     }
 
-    public String getName() {
-        return name;
+    public String getInstrumentName() {
+        return instrumentName;
     }
 
-    public void setName(String intrumentName) {
-        this.name = name;
+    public void setInstrumentName(String instrumentName) {
+        this.instrumentName = instrumentName;
+    }
+
+    public Set<InstrumentCopy> getInstrumentcopies() {
+        return instrumentcopies;
+    }
+
+    public void setInstrumentcopies(Set<InstrumentCopy> instrumentcopies) {
+        this.instrumentcopies = instrumentcopies;
     }
 }

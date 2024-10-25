@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/general :: baseHeader(~{:: title})}">
+    <title th:text="|Details for sheetmusic: ${sheetmusic.title}|"></title>
+</head>
+<body>
+
+<div th:replace="~{fragments/general :: navbar}"></div>
+
+<div class="container">
+    <h1>Details for <span th:text="${sheetmusic.title}"></span></h1>
+
+    <h2>Authors</h2>
+    <ul>
+        <li th:each="composer : ${sheetmusic.composers}"><a th:href="@{/sheetmusic/detail/{composerName}(composerName = ${Composer.composerName})}" th:text="${Composer.composerName}"></a></li>
+    </ul>
+
+    <h2>Actions</h2>
+    <ul>
+        <li><a th:href="@{/sheetmusic/edit/{bookTitle}(bookTitle = ${sheetmusic.title})}">Edit music</a></li>
+        <li><a th:href="@{/sheetmusic/delete/{bookTitle}(bookTitle = ${sheetmusic.title})}">Delete music</a></li>
+        <li><a th:href="@{/copy/new/{bookTitle}(bookTitle = ${sheetmusic.title})}">Add performance</a></li>
+    </ul>
+
+    <h2>Performances</h2>
+    <table>
+        <tr th:each="copy : ${sheetmusic.copies}">
+            <td th:text="${sheetmusic.sheetMusicId}"></td>
+    </table>
+</div>
+
+<div th:replace="~{fragments/general :: footer}"></div>
+<div th:replace="~{fragments/general :: bottomScripts}"></div>
+</body>
+</html>

@@ -26,12 +26,12 @@ public class InstrumentCopyController {
         this.instrumentCopyRepository = instrumentCopyRepository;
     }
 
-    @GetMapping("/instrumentcopy/new/{instrumentId}")
-    private String createNewInstrumentCopy(@PathVariable("instrumentId") Long instrumentId) {
-        Optional<Instrument> instrumentOptional = instrumentRepository.findById(instrumentId);
+    @GetMapping("/instrumentcopy/new/{instrumentName}")
+    private String createNewInstrumentCopy(@PathVariable("instrumentName") String instrumentName) {
+        Optional<Instrument> instrumentOptional = instrumentRepository.findByInstrumentName(instrumentName);
 
         if (instrumentOptional.isEmpty()) {
-            System.err.printf("Could not retrieve instrument with ID: %d", instrumentId);
+            System.err.printf("Could not retrieve instrument with ID: %d", instrumentName);
             return "redirect:/";
         }
 
